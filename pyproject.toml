@@ -1,0 +1,19 @@
+[project]
+name = "erpnext_ksa"
+authors = [
+    { name = "Frappe Technologies", email = "contact@frappe.io"}
+]
+description = "App to hold regional code for Saudi Arabia, built on top of ERPNext."
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    "erpnext",
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.module]
+name = "erpnext_ksa"
