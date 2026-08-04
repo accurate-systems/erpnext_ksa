@@ -8,7 +8,8 @@ requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
 dependencies = [
-    "erpnext",
+    # was only in requirements.txt, which pip ignores now that pyproject.toml exists
+    "pyqrcode~=1.2.1",
 ]
 
 [build-system]
@@ -17,3 +18,9 @@ build-backend = "flit_core.buildapi"
 
 [tool.flit.module]
 name = "erpnext_ksa"
+
+# Frappe apps are resolved by bench from git, not PyPI — declare them here, not in
+# [project.dependencies]. Frappe Cloud reads this block to validate bench compatibility.
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0,<16.0.0"
+erpnext = ">=15.0.0,<16.0.0"
